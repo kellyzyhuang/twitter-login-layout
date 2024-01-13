@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import Button from '@/components/Button'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -14,101 +13,33 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
+      <main className={`${styles.main}`}>
+        <div className={styles.container}>
+        <div className={styles.logo}>
+          <Image src={'/images/twitterlogo.png'} alt="Twitter Logo" width={530} height={450} className={styles.twitterlogo}/>
         </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
+        <div className={styles.logincontainer}>
+          <h1 className={styles.h1}>Happening now</h1>
+          <h2 className={styles.h2}>Join today.</h2>
+            <div className={styles.buttons}>
+              <Button imgSrc='/images/googlelogo.png' imgSize="20px" title="Sign up with Google" border="1px solid var(--grey)"/>
+              <Button imgSrc='/images/applelogo.png' imgSize="21px" title="Sign up with Apple"/>
+            <div className={styles.orsection}>
+              <hr className={styles.line}/>
+              <span className={styles.or}>or</span>
+              <hr className={styles.line}/>
+            </div>
+              <Button title="Create account" color="var(--blue)" textColor="var(--white)" className="bluehover"/>
+              <p className={styles.p}>By signing up, you agree to the <a href="#" className={styles.linkblue}>Terms of Service </a> 
+               and <a href="#" className={styles.linkblue}>Privacy Policy</a>, including <a href="#" className={styles.linkblue}>Cookie Use</a>
+              </p>
+              <h4 className={styles.h4}>Already have an account?</h4>
+              <Button title="Sign in" color="var(--black)" textColor="var(--blue)" border="1px solid var(--grey)"/>
+            </div>
+            </div>
         </div>
       </main>
+      <Footer/>
     </>
   )
 }
