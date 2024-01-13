@@ -13,6 +13,6 @@
   - buttons
   - headings
   - footer 
-- Components were made so certain elements could be reused 
+- Buttons and footer were made in components so they could be reused 
 - Global.css was used to reuse the main colors for the layout 
-- The layout is made responsive using media queries from iPhone XR, iPad Air, and desktop
+- The layout is made responsive using media queries for the iPhone XR, iPad Air, and desktop
